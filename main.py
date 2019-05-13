@@ -25,9 +25,9 @@ def show_video(video_is_finished, capture_is_finished, video_is_ready, capture_i
     #웹캠 준비까지 대기
     while not (video_is_ready.value and capture_is_ready.value):
          cv2.waitKey(1)
-    myclip.preview()
+    #myclip.preview()
     #풀스크린으로 보고싶다면
-    #myclip.preview(fullscreen=True)
+    myclip.preview(fullscreen=True)
 
     #비디오 종료를 알림
     print('video is finished')
@@ -130,16 +130,16 @@ def save_images(img_list):
             os.makedirs(os.path.dirname(cropped_gray_path))
 
         #패스 출력
-        print(original_path)
-        print(cropped_path)
-        print(cropped_gray_path)
+        #print(original_path)
+        #print(cropped_path)
+        #print(cropped_gray_path)
         #이미지 그레이 스케일 및 페이스 디텍션
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1)
+        # 원본
+        cv2.imwrite(original_path, img)
         for face_i in faces:
             x, y, w, h = face_i
-            #원본
-            cv2.imwrite(original_path, img)
             # 원본 + 얼굴 디텍션, 크롭
             face_crop = img[y:y + h, x:x + w]
             cv2.imwrite(cropped_path, face_crop)
