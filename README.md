@@ -1,4 +1,4 @@
-# python_gatter_facial_data_with_video
+# python_facial_data_collector_with_video
 DLC MALAB 3rd team
 First project
 
