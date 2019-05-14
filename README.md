@@ -2,7 +2,7 @@
 DLC MALAB 3rd team
 First project
 
-this application will gatter your facial data through webcam. so you must need webcam or something other camera.
+this application will gatter your facial data with your webcam. so you must need webcam or something other camera.
 
 ## How to start
 
